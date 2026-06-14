@@ -27,7 +27,7 @@ export default function ImpactMap({ isArabic }: { isArabic: boolean }) {
           </p>
         </div>
 
-        <div className="relative w-full min-h-[300px] aspect-square md:aspect-[2/1] max-h-[600px] bg-primary/5 rounded-3xl overflow-hidden border border-primary/10 flex items-center justify-center">
+        <div className="relative w-full min-h-[300px] aspect-square md:aspect-2/1 max-h-[600px] bg-primary/5 rounded-3xl overflow-hidden border border-primary/10 flex items-center justify-center">
           
           {/* Abstract World Map SVG */}
           <svg className="absolute inset-0 w-full h-full text-primary/10" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
