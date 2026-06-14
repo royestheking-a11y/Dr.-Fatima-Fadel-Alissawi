@@ -38,7 +38,7 @@ export default function Expertise() {
           </p>
         </div>
 
-        <div className="relative w-full aspect-square md:aspect-video max-w-4xl mx-auto mt-10">
+        <div className="relative w-full h-[450px] sm:h-[600px] md:aspect-video md:h-auto max-w-4xl mx-auto mt-10">
           {/* SVG Connections */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
             {nodes.filter(n => !n.main).map((node) => {
@@ -79,22 +79,22 @@ export default function Expertise() {
               <div 
                 className={cn(
                   "relative group cursor-pointer flex items-center justify-center transition-all duration-300",
-                  node.main ? "w-32 h-32 md:w-40 md:h-40" : "w-auto h-auto px-4 py-2"
+                  node.main ? "w-24 h-24 md:w-40 md:h-40" : "w-auto h-auto px-2 py-1 md:px-4 md:py-2"
                 )}
               >
                 {node.main ? (
                   <>
                     <div className="absolute inset-0 bg-primary/10 rounded-full animate-ping opacity-50" />
                     <div className="absolute inset-2 bg-linear-to-br from-primary to-secondary-teal rounded-full shadow-[0_0_30px_rgba(13,148,136,0.4)] flex items-center justify-center">
-                      <span className="text-white font-serif text-lg md:text-xl font-bold">{t(node.labelKey)}</span>
+                      <span className="text-white font-serif text-sm md:text-xl font-bold">{t(node.labelKey)}</span>
                     </div>
                   </>
                 ) : (
                   <div className={cn(
-                    "glass-card rounded-full px-6 py-3 whitespace-nowrap transition-all duration-300 transform group-hover:scale-110",
+                    "glass-card rounded-full px-3 py-1 md:px-6 md:py-3 whitespace-nowrap transition-all duration-300 transform group-hover:scale-110",
                     hoveredNode === node.id || hoveredNode === "center" ? "border-primary bg-primary/5 shadow-[0_0_15px_rgba(13,148,136,0.2)]" : "border-primary/20"
                   )}>
-                    <span className="text-charcoal font-medium text-sm md:text-base">{t(node.labelKey)}</span>
+                    <span className="text-charcoal font-medium text-[10px] md:text-base">{t(node.labelKey)}</span>
                   </div>
                 )}
               </div>

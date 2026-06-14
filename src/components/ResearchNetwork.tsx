@@ -39,7 +39,7 @@ export default function ResearchNetwork() {
           </p>
         </div>
 
-        <div className="relative w-full aspect-square md:aspect-video max-w-5xl mx-auto border border-primary/10 rounded-3xl bg-soft/50 overflow-hidden shadow-inner">
+        <div className="relative w-full h-[450px] sm:h-[600px] md:aspect-video md:h-auto max-w-5xl mx-auto border border-primary/10 rounded-3xl bg-soft/50 overflow-hidden shadow-inner">
           
           <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
             {outerNodes.map((node) => {
@@ -101,8 +101,8 @@ export default function ResearchNetwork() {
                 className={cn(
                   "relative flex items-center justify-center rounded-full transition-all duration-300",
                   node.type === "center" 
-                    ? "w-24 h-24 md:w-32 md:h-32 bg-linear-to-br from-primary to-secondary-teal shadow-[0_0_40px_rgba(13,148,136,0.4)] z-20 hover:scale-110" 
-                    : "w-20 h-20 md:w-28 md:h-28 bg-white border border-primary/20 shadow-lg z-10 hover:border-primary hover:shadow-[0_0_20px_rgba(13,148,136,0.2)] hover:scale-110",
+                    ? "w-20 h-20 md:w-32 md:h-32 bg-linear-to-br from-primary to-secondary-teal shadow-[0_0_40px_rgba(13,148,136,0.4)] z-20 hover:scale-110" 
+                    : "w-16 h-16 md:w-28 md:h-28 bg-white border border-primary/20 shadow-lg z-10 hover:border-primary hover:shadow-[0_0_20px_rgba(13,148,136,0.2)] hover:scale-110",
                   activeNode === node.id && node.type !== "center" && "border-primary bg-primary/5"
                 )}
               >
@@ -110,8 +110,8 @@ export default function ResearchNetwork() {
                   <div className="absolute inset-0 border border-white/50 rounded-full animate-ping opacity-50" />
                 )}
                 <span className={cn(
-                  "font-semibold text-center leading-tight px-2",
-                  node.type === "center" ? "text-white text-base md:text-lg font-serif" : "text-charcoal text-xs md:text-sm"
+                  "font-semibold text-center leading-tight px-1 md:px-2",
+                  node.type === "center" ? "text-white text-xs md:text-lg font-serif" : "text-charcoal text-[10px] md:text-sm"
                 )}>
                   {t(node.labelKey)}
                 </span>
