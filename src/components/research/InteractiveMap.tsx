@@ -29,7 +29,9 @@ export default function InteractiveMap({ isArabic }: { isArabic: boolean }) {
           </p>
         </div>
 
-        <div className="relative w-full max-w-3xl mx-auto h-[500px] flex items-center justify-center">
+        <div className="relative w-full max-w-3xl mx-auto h-[400px] sm:h-[500px] flex items-center justify-center overflow-hidden sm:overflow-visible">
+          
+          <div className="relative flex items-center justify-center scale-[0.65] sm:scale-100 origin-center">
           
           {/* Center Node */}
           <motion.div 
@@ -86,6 +88,7 @@ export default function InteractiveMap({ isArabic }: { isArabic: boolean }) {
               </motion.div>
             );
           })}
+          </div>
         </div>
       </div>
     </section>

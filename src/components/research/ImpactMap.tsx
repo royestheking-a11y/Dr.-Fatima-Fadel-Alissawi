@@ -27,7 +27,7 @@ export default function ImpactMap({ isArabic }: { isArabic: boolean }) {
           </p>
         </div>
 
-        <div className="relative w-full aspect-2/1 max-h-[600px] bg-primary/5 rounded-3xl overflow-hidden border border-primary/10 flex items-center justify-center">
+        <div className="relative w-full min-h-[300px] aspect-square md:aspect-[2/1] max-h-[600px] bg-primary/5 rounded-3xl overflow-hidden border border-primary/10 flex items-center justify-center">
           
           {/* Abstract World Map SVG */}
           <svg className="absolute inset-0 w-full h-full text-primary/10" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
@@ -56,7 +56,7 @@ export default function ImpactMap({ isArabic }: { isArabic: boolean }) {
                 <div className="absolute inset-0 bg-gold rounded-full animate-ping opacity-20 pointer-events-none"></div>
                 
                 {/* Tooltip */}
-                <div className="absolute top-full mt-3 bg-charcoal text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+                <div className="absolute top-full mt-3 bg-charcoal text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-xs md:text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
                   <div className="font-bold text-gold">{region.name}</div>
                   <div className="text-white/70 text-xs mt-1">{region.type}</div>
                   {/* Triangle pointer */}
