@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Award, FileText, Bookmark, GraduationCap, ArrowRight } from "lucide-react";
+import { BookOpen, Award, FileText, Bookmark, GraduationCap, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -86,6 +86,19 @@ export default function ResearchArchive() {
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         
+        {/* Back Button */}
+        <div className="flex justify-start mb-8 text-left" dir={isArabic ? 'rtl' : 'ltr'}>
+          <Link 
+            href="/#researchLab" 
+            className="inline-flex items-center gap-2 text-charcoal/50 hover:text-primary transition-colors font-semibold tracking-widest uppercase text-xs"
+          >
+            {isArabic ? (
+              <>العودة إلى الرئيسية <ArrowLeft className="w-4 h-4 rotate-180" /></>
+            ) : (
+              <><ArrowLeft className="w-4 h-4" /> Back to Home</>
+            )}
+          </Link>
+        </div>
         {/* Header */}
         <div className="text-center mb-20">
           <motion.h1 
