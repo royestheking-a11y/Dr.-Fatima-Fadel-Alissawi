@@ -30,8 +30,8 @@ function applyLanguageToDOM(lang: Language) {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Always start with "en" so server and initial client render match exactly
-  const [language, setLanguage] = useState<Language>("en");
+  // Always start with "ar" so server and initial client render match exactly
+  const [language, setLanguage] = useState<Language>("ar");
   const [mounted, setMounted] = useState(false);
 
   // After hydration: read saved preference and apply — runs only on client
@@ -40,9 +40,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const resolved: Language =
       savedLang === "en" || savedLang === "ar"
         ? savedLang
-        : navigator.language.startsWith("ar")
-        ? "ar"
-        : "en";
+        : navigator.language.startsWith("en")
+        ? "en"
+        : "ar";
 
     // Batch: update state + DOM in the same tick so there's one re-render
     setLanguage(resolved);
